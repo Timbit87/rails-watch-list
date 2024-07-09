@@ -29,5 +29,19 @@ movies['results'].each do |movie|
     rating: movie['vote_average'].round(1),
     poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}"
   )
+  end
+puts "popular"
+url = "https://tmdb.lewagon.com/movie/popular"
+movies_serialized = URI.open(url).read
+movies = JSON.parse(movies_serialized)
+
+movies['results'].each do |movie|
+  Movie.create!(
+    title: movie['title'],
+    overview: movie['overview'],
+    rating: movie['vote_average'].round(1),
+    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}"
+  )
 end
+
 puts "finished"
