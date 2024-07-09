@@ -68,4 +68,19 @@
 
 .card-product {
   height: auto;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product-infos {
+  display: flexbox;
+  h2 {
+    justify-content: space-between;
+  }
+  span {
+    justify-content: flex-end;
+  }
 }
