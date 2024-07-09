@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Watchlist</h1>
+      <h3>In Soviet Watchlist, you watch Big Brother</h3>
+      <% @lists.all.each do |list| %>
+          <div class="card-product my-2">
+          <%= image_tag("0061", width: "200") %>
+            <div class="card-product-infos">
+              <h2><%= list.name %></h2>
+              <%= link_to "->", list_path(list.id), class: "btn btn-primary align-items-right" %>
+            </div>
+        </div>
+      <% end %>
+    <a class="btn btn-primary" href="/lists/new">Create List</a>
+</div>

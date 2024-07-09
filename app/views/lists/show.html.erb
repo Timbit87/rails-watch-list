@@ -1,0 +1,21 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+    <ul class="list-group">
+      <% @list.movies.each do |listing| %>
+        <% bookmark = Bookmark.where(movie: listing, list: @list).first %>
+        <div class="card-product my-2">
+          <%= image_tag listing.poster_url, width: 200 %>
+            <div class="card-product-infos">
+              <h2><%= listing.title %></h2>
+              <p><%= listing.overview %></p>
+              <p><strong>Rating: </strong><%= listing.rating %></p>
+              <p><strong>NOTES: </strong><%= bookmark.comment %></p>
+                <%= link_to "Remove from List", bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+            </div>
+        </div>
+      <% end %>
+    </ul>
+</div>
