@@ -6,7 +6,7 @@
           <%= image_tag("0061.jpg", width: "200") %>
             <div class="card-product-infos w-75 d-flex align-items-center justify-content-between">
               <div class="p-2"><h2><%= list.name %></h2></div>
-              <div class="p-2"><%= link_to "->", list_path(list.id), class: "btn btn-primary" %></div>
+              <div class="p-2"><%= link_to(list_path(list.id)) do %><i class="fa-regular fa-square-caret-right fa-4x"></i><% end %></div>
             </div>
           </div>
       <% end %>
