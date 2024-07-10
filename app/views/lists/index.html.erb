@@ -4,11 +4,11 @@
       <% @lists.all.each do |list| %>
           <div class="card-product my-2">
           <%= image_tag("0061.jpg", width: "200") %>
-            <div class="card-product-infos d-flex align-items-center">
+            <div class="card-product-infos w-75 d-flex align-items-center justify-content-between">
               <div class="p-2"><h2><%= list.name %></h2></div>
-              <div class="p-2 justify-content-end"><%= link_to "->", list_path(list.id), class: "btn btn-primary" %></div>
+              <div class="p-2"><%= link_to "->", list_path(list.id), class: "btn btn-primary" %></div>
             </div>
-        </div>
+          </div>
       <% end %>
     <a class="btn btn-primary" href="/lists/new">Create List</a>
 </div>
