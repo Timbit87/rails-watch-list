@@ -1,9 +1,9 @@
 <div class="container">
-    <h1>Watchlist</h1>
-      <h3>In Soviet Watchlist, you watch Big Brother</h3>
-      <% @lists.all.each do |list| %>
+    <h1>Maruko's Movies</h1>
+      <h3>Let this good girl help you with your movie watchlist!</h3>
+      <% @lists.each do |list| %>
           <div class="card-product my-2">
-          <%= image_tag("0061.jpg", width: "200") %>
+          <%= cl_image_tag list.photo.key, width: "200" %>
             <div class="card-product-infos w-75 d-flex align-items-center justify-content-between">
               <div class="p-2"><h2><%= list.name %></h2></div>
               <div class="p-2"><%= link_to(list_path(list.id)) do %><i class="fa-regular fa-square-caret-right fa-4x"></i><% end %></div>
