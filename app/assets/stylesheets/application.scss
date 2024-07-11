@@ -84,3 +84,15 @@
     justify-content: flex-end;
   }
 }
+
+#font-awesome:hover {
+  background-color: blue;
+  color: white;
+  transition: 1s;
+  border-radius: 8px;
+}
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
